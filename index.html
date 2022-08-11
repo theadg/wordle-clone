@@ -6,10 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- linking css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
     <title>Wordle Clone</title>
 </head>
 
-<body>
-    
+<body class = " bg-slate-900 pt-2 font-poppins 
+                container h-screen  flex items-start items-center gap-y-40  flex-col mx-auto">
+    <!-- title -->
+    <h1 class ="text-white font-bold text-center text-3xl">Wordle</h1>
+
+    <div class="">
+    <!-- container of input boxes and keyboard-->
+        <div class="h-ht w-wt flex flex-wrap gap-1.5 justify-center text-white text-center font-bold uppercase
+                    text-3xl mx-auto">
+            <!-- buttons -->
+            <!-- border-slate-600 pagmay laman -->
+            <!-- 1st row -->
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-gray pt-2 ">a</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">b</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">c</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">d</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">e</div>
+            <!-- 2nd row -->
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">e</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">f</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 ">g</div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+            <!-- 3rd row -->
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+            <!-- 4th row -->
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>   
+
+            <!-- 5th row -->
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+            <!-- 6th row -->
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+        </div>
+
+        <!-- screen keyboard -->
+        <!-- container -->
+        <div class="container h-hk w-wk  flex gap-1 flex-wrap justify-center items-center absolute inset-x-0 bottom-0 mx-auto">
+            <!-- 1st row -->
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >q</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >w</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >e</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >r</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >t</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >y</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >u</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >i</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >o</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >p</button>
+            <!-- 2nd row  mx-auto-->
+            <div class="2nd-row ">
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >a</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >s</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >d</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >f</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >g</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >h</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >j</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >k</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >l</button>
+            </div>
+            <!-- 3rd row -->
+            <div class="flex gap-1">
+                <button class ="w-18 h-14 bg-gray rounded-md uppercase text-white shrink-0" >ENTER</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >s</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >d</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >f</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >g</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >h</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white" >j</button>
+                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white " >k</button>
+                <button class ="w-18 h-14 bg-gray rounded-md  text-white ">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="mx-auto" >
+                        <path fill="white" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z">
+                
+                        </path></svg> </button>
+                   
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
