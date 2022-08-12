@@ -11,3 +11,33 @@
 .h-screen{
     height: 100vh;
 }
+
+.correct{
+    background-color: rgb(83, 141, 78);
+    animation-name: flip;
+    animation-duration: 0.5s;
+}
+
+@keyframes flip {
+    0%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+.almost-correct{
+    background-color: rgb(181, 159, 59);
+    animation-name: flip;
+    animation-duration: 0.5s;
+}
+
+.wrong{
+    background-color: rgb(58,58,60);
+    animation-name: flip;
+    animation-duration: 0.5s;
+}
