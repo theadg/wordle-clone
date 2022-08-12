@@ -623,10 +623,6 @@ video {
   height: 200px;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .w-wt {
   width: 330px;
 }
@@ -677,35 +673,6 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
-}
-
-.gap-x-96 {
-  -moz-column-gap: 24rem;
-       column-gap: 24rem;
-}
-
-.gap-y-96 {
-  row-gap: 24rem;
-}
-
-.gap-y-72 {
-  row-gap: 18rem;
-}
-
-.gap-y-60 {
-  row-gap: 15rem;
-}
-
-.gap-y-20 {
-  row-gap: 5rem;
-}
-
-.gap-y-48 {
-  row-gap: 12rem;
 }
 
 .gap-y-40 {
@@ -777,4 +744,56 @@ video {
 
 .h-screen{
   height: 100vh;
+}
+
+.correct{
+  background-color: rgb(83, 141, 78);
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+@-webkit-keyframes flip {
+  0%{
+    transform: scaleY(1);
+  }
+
+  50%{
+    transform: scaleY(0);
+  }
+
+  100%{
+    transform: scaleY(1);
+  }
+}
+
+@keyframes flip {
+  0%{
+    transform: scaleY(1);
+  }
+
+  50%{
+    transform: scaleY(0);
+  }
+
+  100%{
+    transform: scaleY(1);
+  }
+}
+
+.almost-correct{
+  background-color: rgb(181, 159, 59);
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.wrong{
+  background-color: rgb(58,58,60);
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
