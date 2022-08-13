@@ -15,10 +15,10 @@
 </head>
 
 <body class = " bg-slate-900 pt-2 font-poppins 
-               height width flex items-start items-center justify-center flex-col mx-auto">
+               h-screen width flex items-start items-center h-screen flex flex-col items-center justify-between flex-col mx-auto">
      
     <!-- NAVIGATION -->
-            <nav class =" absolute top-2 flex  w-11/12 items-center justify-between px-5 ">
+            <nav class ="  top-2 flex  w-11/12 items-center justify-between px-5 ">
                 <!-- menu kuno ADD LINK TO RINK ROLL  -->
                 <button id = "menu">
                     <svg class="NavIcon-module_burgerSvg__WKh0A" width="25" height="20" viewBox="0 0 24 17" fill="white" xmlns="http://www.w3.org/2000/svg"><rect x="0.172974" width="20" height="3" rx="1.5" fill="var(--color-tone-1)"></rect><rect x="0.172974" y="7" width="20" height="3" rx="1.5" fill="var(--color-tone-1)"></rect><rect x="0.172974" y="14" width="20" height="3" rx="1.5" fill="var(--color-tone-1)"></rect></svg>
@@ -147,7 +147,7 @@
             <div class="container absolute w-auto px-8 py-2 bg-slate-200 font-bold top rounded-md mt-24 hidden " id = "notEnoughLetters">Not enough letters</div>
     
     
-    <div class="">   
+    <!-- <div class="">    -->
     <!-- container of input boxes and keyboard-->
         <div id ="kb-cont" class=" h-ht w-wt flex flex-wrap gap-1.5 justify-center text-white text-center font-bold uppercase
                     text-3xl mx-auto ">
@@ -205,7 +205,8 @@
 
         <!-- screen keyboard -->
         <!-- container -->
-        <div class="container md:h-hk md:w-wk  flex gap-1 flex-wrap justify-center items-center absolute inset-x-0 bottom-0 mx-auto
+        <!--  absolute inset-x-0 bottom-0 -->
+        <div class="container md:h-hk md:w-wk  flex gap-1 flex-wrap justify-center items-center mx-auto
                     xs:w-auto">
             <!-- 1st row -->
             <div class="xs:flex xs:gap-1">
@@ -249,7 +250,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
     <!-- linking js -->
     <script src="script.js"></script>
