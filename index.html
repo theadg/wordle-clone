@@ -10,24 +10,152 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
+    <link rel="shortcut icon" href="wordle-favicon.ico" type="image/x-icon">
     <title>Wordle Clone</title>
 </head>
 
 <body class = " bg-slate-900 pt-2 font-poppins 
-                container h-screen  flex items-start items-center gap-y-40  flex-col mx-auto">
-    <!-- title -->
-    <h1 class ="text-white font-bold text-center text-3xl">Wordle</h1>
+                container height width flex items-start items-center justify-center flex-col mx-auto">
+     
+    <!-- NAVIGATION -->
+            <nav class =" absolute top-2 flex  w-11/12 items-center justify-between px-5 ">
+                <!-- menu kuno ADD LINK TO RINK ROLL  -->
+                <button id = "menu">
+                    <svg class="NavIcon-module_burgerSvg__WKh0A" width="25" height="20" viewBox="0 0 24 17" fill="white" xmlns="http://www.w3.org/2000/svg"><rect x="0.172974" width="20" height="3" rx="1.5" fill="var(--color-tone-1)"></rect><rect x="0.172974" y="7" width="20" height="3" rx="1.5" fill="var(--color-tone-1)"></rect><rect x="0.172974" y="14" width="20" height="3" rx="1.5" fill="var(--color-tone-1)"></rect></svg>
+                </button>
+                <!-- logo -->
+                    <h1 class ="text-white font-bold text-center text-3xl">WORDLE</h1>
+                <!--SHOW INFO MODAL-->
+                <button class ="info">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="4 4 24 24" width="28" class="game-icon" data-testid="icon-help"><path fill="white" d="M14.8333 23H17.1666V20.6667H14.8333V23ZM15.9999 4.33334C9.55992 4.33334 4.33325 9.56001 4.33325 16C4.33325 22.44 9.55992 27.6667 15.9999 27.6667C22.4399 27.6667 27.6666 22.44 27.6666 16C27.6666 9.56001 22.4399 4.33334 15.9999 4.33334ZM15.9999 25.3333C10.8549 25.3333 6.66659 21.145 6.66659 16C6.66659 10.855 10.8549 6.66668 15.9999 6.66668C21.1449 6.66668 25.3333 10.855 25.3333 16C25.3333 21.145 21.1449 25.3333 15.9999 25.3333ZM15.9999 9.00001C13.4216 9.00001 11.3333 11.0883 11.3333 13.6667H13.6666C13.6666 12.3833 14.7166 11.3333 15.9999 11.3333C17.2833 11.3333 18.3333 12.3833 18.3333 13.6667C18.3333 16 14.8333 15.7083 14.8333 19.5H17.1666C17.1666 16.875 20.6666 16.5833 20.6666 13.6667C20.6666 11.0883 18.5783 9.00001 15.9999 9.00001Z"></path></svg>
+                </button>
+            </nav>
+    <!-- WINNER MODAL -->
+            <div id = "winModal" class= " hidden flex gap-5 flex-col px-5 py-5 text-white absolute h-80 w-96 bg-slate-800 inset-0 m-auto z-30 modal items-center justify-center" id="modalWinner"> 
+                <!-- close button -->
+                <!-- <div id = "closeModal"class="hover:cursor-pointer absolute right-0 px-5 py-1"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="game-icon" data-testid="icon-close"><path fill="white" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></div> -->
+                
+                <!-- title <span class ="text-green px-2">-->
+                <div class="font-bold w-auto h-auto text-3xl text-white">YOU WON 🙌</div>
+                <!-- word info -->
+                <div id ="sayToUser" class="">Lucky guess.</div>
 
-    <div class="">
+              
+              
+
+                <div id = "word" class="flex   gap-1.5 text-3xl font-bold text-center ">
+                    <div class ="border border-solid border-slate-600  h-14 w-14  bg-slate-900 pt-2"></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                </div>
+                <div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" class ="underline text-blue-300">Learn more about the word.</a></div>
+
+                <div class="buttons flex gap-3">
+                    <button id = "playCancel"class ="w-40 h-14 bg-gray px-5 rounded-md uppercase text-white font-bold almost-correct text-xl"> Cancel </button>
+                    <button id = "playAgain"class ="w-auto h-14 bg-gray px-5 rounded-md uppercase text-white font-bold correct text-xl"> Play Again </button>
+                </div>
+            
+            </div>
+
+        <!-- LOSER MODAL -->
+            <div id = "loseModal" class= "hidden flex gap-5 flex-col px-5 py-5 text-white absolute h-80 w-96 bg-slate-800 inset-0 m-auto z-30 modal items-center justify-center" id="modalWinner"> 
+                <!-- close button -->
+                <!-- <div id = "closeModal"class="hover:cursor-pointer absolute right-0 px-5 py-1"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="game-icon" data-testid="icon-close"><path fill="white" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></div> -->
+                
+                <!-- title <span class ="text-green px-2">-->
+                <div class="font-bold w-auto h-auto text-3xl text-white">YOU LOST 🙌</div>
+                <!-- word info -->
+                <div id ="sayToUser" class="">Better luck next time.</div>
+
+              
+
+                <div id = "wordLose" class="flex   gap-1.5 text-3xl font-bold text-center ">
+                    <div class ="border border-solid border-slate-600  h-14 w-14  bg-slate-900 pt-2"></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                    <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 "></div>
+                </div>
+                <div><a href="" class ="underline text-blue-300">Learn more about the word.</a></div>
+
+                <div class="buttons flex gap-3">
+                    <button id = "playCancelLose"class ="w-40 h-14 bg-gray px-5 rounded-md uppercase text-white font-bold almost-correct text-xl"> Cancel </button>
+                    <button id = "playAgainLose"class ="w-auto h-14 bg-gray px-5 rounded-md uppercase text-white font-bold correct text-xl"> Play Again </button>
+                </div>
+            
+            </div>
+
+    <!--  INFO MODAL-->
+            <!-- MODAL BG -->
+            <div id = "modalBG" class="hidden absolute  overflow-y-hidden m-0 height-max width-max bg-slate-900 z-20 opacity-80 xs:w-screen">
+                
+            </div>    
+            <!-- INFO MODAL CONTENT-NER-->
+            <div id = "modal" class=" hidden text-white  px-5 py-5 flex flex-col absolute  h-hm md:w-wk bg-slate-800 inset-0 m-auto z-30 modal xs:w-screen xs:h-fit ">
+                <div class="flex flex-wrap align-center justify-center flex-row w-full h-fit" id="modalHeader">
+                    <div class="font-bold w-auto h-auto text-3xl">HOW TO PLAY</div>
+                    <div id = "closeModal"class="hover:cursor-pointer absolute right-0 px-5 py-1"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="game-icon" data-testid="icon-close"><path fill="white" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></div>
+                </div>
+                
+                <!-- more text section -->
+                <div class="more-text flex flex-col gap-3 mt-3">
+                    <p>Guess the WORDLE in 6 tries.</p>
+                    <p>Each guess must be a valid 5-letter word. Hit the enter button to submit. </p>
+                    <p>After each guess, the color of the tiles will change to show how close your guess was to the word.</p>
+                    <!-- LINEEE  -->
+                        <div class="w-full h-px bg-white opacity-70"></div>
+                </div>
+
+            
+                <!-- EXAMPLES CONTAINER -->
+                <div class="flex flex-col mt-3" id="examples">
+                    <!-- TITLE-->
+                    <H1 class ="font-bold uppercase">examples:</H1>
+                    <!-- correct letters -->
+                        <div class="flex justify-center items-center gap-5 mt-3">
+                            <button disabled class =" font-bold w-18 h-16 bg-gray  border border-solid white text-3xl uppercase text-white  correct" >A</button>
+                            <p class ="text-justify h-auto w-64">Green means the letter is in the word and the correct spot</p>
+                        </div>
+
+
+                    
+            <!-- correct but not so much -->
+            <div class="flex justify-center items-center gap-5 mt-3">
+                <button disabled class =" font-bold w-18 h-16 bg-gray  border border-solid white text-3xl uppercase text-white almost-correct" >D</button>
+                <p class ="text-justify h-auto w-64">Mustard means the letter is in the word but in the wrong spot</p>
+            </div>
+            <!-- WRONG -->
+            <div class="flex justify-center items-center gap-5 mt-3">
+                <button disabled class =" font-bold w-18 h-16 bg-gray   border border-solid white text-3xl uppercase text-white wrong" >G</button>
+                <p class ="text-justify h-auto w-64">Black means the letter is not in the word</p>
+            </div>
+            <!-- LINEEE  -->
+            <div class="w-full h-px bg-white opacity-70 mt-5"></div>
+        </div>
+
+        <!-- TEXT -->
+        <div class="mt-3">Enjoy <span class ="underline text-blue-300"><a href = "https://github.com/theadg/wordle-clone" target="_blank">my attempt</a></span> at cloning WORDLE 😉</div>
+        <div class="mt-3">This version is unlimited so knock yourself out.
+        </div>
+    </div>
+    
+    <!-- invalid word modal -->
+            <div class="container absolute w-auto px-8 py-2 bg-slate-200 font-bold top rounded-md mt-24 hidden " id = "notInWordList">Not in word list</div>
+    <!-- incomplete letters -->
+            <div class="container absolute w-auto px-8 py-2 bg-slate-200 font-bold top rounded-md mt-24 hidden " id = "notEnoughLetters">Not enough letters</div>
+    
+    
+    <div class="">   
     <!-- container of input boxes and keyboard-->
-        <div class="h-ht w-wt flex flex-wrap gap-1.5 justify-center text-white text-center font-bold uppercase
+        <div id ="kb-cont" class=" h-ht w-wt flex flex-wrap gap-1.5 justify-center text-white text-center font-bold uppercase
                     text-3xl mx-auto ">
             <!-- buttons -->
             <!-- border-slate-600 pagmay laman -->
             <!-- 1st row -->
             <div class="flex gap-1.5 row" id ="first-row">
-                <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2"  id = "r1c1"></div>
+                <div class =" border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2"  id = "r1c1"></div>
                 <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 " id = "r1c2"></div>
                 <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 " id = "r1c3"></div>
                 <div class ="border border-solid border-slate-600 h-14 w-14  bg-slate-900 pt-2 " id = "r1c4"></div>
@@ -77,45 +205,47 @@
 
         <!-- screen keyboard -->
         <!-- container -->
-        <div class="container h-hk w-wk  flex gap-1 flex-wrap justify-center items-center absolute inset-x-0 bottom-0 mx-auto">
+        <div class="container md:h-hk md:w-wk  flex gap-1 flex-wrap justify-center items-center absolute inset-x-0 bottom-0 mx-auto
+                    xs:w-auto">
             <!-- 1st row -->
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "q">q</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "w">w</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "e">e</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "r">r</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "t">t</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "y">y</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "u">u</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "i">i</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "o">o</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" data-key = "p">p</button>
-            <!-- 2nd row  mx-auto-->
-            <div class="2nd-row ">
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >a</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >s</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >d</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >f</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >g</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >h</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >j</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >k</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >l</button>
+            <div class="xs:flex xs:gap-1">
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "q">q</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "w">w</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14 " data-key = "e">e</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "r">r</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "t">t</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "y">y</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "u">u</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "i">i</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "o">o</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" data-key = "p">p</button>
+            </div>
+                <!-- 2nd row  mx-auto-->
+            <div class="2nd-row xs:flex xs:gap-1">
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >a</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >s</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >d</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >f</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >g</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >h</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >j</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >k</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >l</button>
             </div>
             <!-- 3rd row -->
             <div class="flex gap-1">
-                <button class ="w-18 h-14 bg-gray rounded-md uppercase text-white shrink-0" id = "enter" >ENTER</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >z</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >x</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >c</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >v</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >b</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >n</button>
-                <button class ="w-11 h-14 bg-gray rounded-md uppercase text-white letter" >m</button>
-                <button class ="w-18 h-14 bg-gray rounded-md  text-white " id = "backSpace">
+                <button class ="md:w-18 md:h-14 bg-gray rounded-md uppercase text-white shrink-0 xs:w-12" id = "enter" >ENTER</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >z</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >x</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >c</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >v</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >b</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >n</button>
+                <button class ="md:w-11 md:h-14 bg-gray rounded-md uppercase text-white letter xs:w-8 xs:h-14" >m</button>
+                <button class ="md:w-18 md:h-14 bg-gray rounded-md  text-white xs:w-12 xs:h-14" id = "backSpace">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" class="mx-auto" >
                         <path fill="white" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z">
                         </path></svg> </button>
-                   
                 </button>
             </div>
         </div>

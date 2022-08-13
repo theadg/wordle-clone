@@ -555,15 +555,21 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 320px) {
   .container {
-    max-width: 640px;
+    max-width: 320px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   .container {
-    max-width: 768px;
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
   }
 }
 
@@ -589,8 +595,23 @@ video {
   position: absolute;
 }
 
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 .inset-x-0 {
   left: 0px;
+  right: 0px;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.right-0 {
   right: 0px;
 }
 
@@ -598,53 +619,127 @@ video {
   bottom: 0px;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
 }
 
 .flex {
   display: flex;
 }
 
-.h-screen {
-  height: 100vh;
+.hidden {
+  display: none;
 }
 
-.h-ht {
-  height: 440px;
+.h-80 {
+  height: 20rem;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-14 {
   height: 3.5rem;
 }
 
-.h-hk {
-  height: 200px;
+.h-hm {
+  height: 620px;
 }
 
-.w-wt {
-  width: 330px;
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.h-px {
+  height: 1px;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.h-ht {
+  height: 440px;
+}
+
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .w-14 {
   width: 3.5rem;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .w-wk {
   width: 484px;
 }
 
-.w-11 {
-  width: 2.75rem;
+.w-full {
+  width: 100%;
 }
 
 .w-18 {
   width: 70px;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
+.w-wt {
+  width: 330px;
+}
+
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -667,6 +762,14 @@ video {
   justify-content: center;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
 .gap-1\.5 {
   gap: 0.375rem;
 }
@@ -675,8 +778,12 @@ video {
   gap: 0.25rem;
 }
 
-.gap-y-40 {
-  row-gap: 10rem;
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .rounded-md {
@@ -701,9 +808,54 @@ video {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
 .bg-gray {
   --tw-bg-opacity: 1;
   background-color: rgb(129 131 132 / var(--tw-bg-opacity));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .pt-2 {
@@ -714,6 +866,10 @@ video {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .font-poppins {
   font-family: Poppins, sans-serif;
 }
@@ -721,6 +877,11 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -734,6 +895,29 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgb(83 141 78 / var(--tw-text-opacity));
+}
+
+.text-blue-300 {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-70 {
+  opacity: 0.7;
 }
 
 /* custom classes here */
@@ -752,6 +936,38 @@ video {
           animation-name: flip;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
+}
+
+.correct-g{
+  background-color: rgb(83, 141, 78);
+}
+
+.almost-correct-g{
+  background-color: rgb(181, 159, 59);
+}
+
+.wrong-g{
+  background-color: rgb(58,58,60);
+}
+
+.almost-correct{
+  background-color: rgb(181, 159, 59);
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.wrong{
+  background-color: rgb(58,58,60);
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+}
+
+.white{
+  border-color: rgb(188, 191, 194);
 }
 
 @-webkit-keyframes flip {
@@ -782,18 +998,239 @@ video {
   }
 }
 
-.almost-correct{
-  background-color: rgb(181, 159, 59);
-  -webkit-animation-name: flip;
-          animation-name: flip;
+@-webkit-keyframes shake {
+  10%,
+    90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+    80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+    50%,
+    70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+    60% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes shake {
+  10%,
+    90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+    80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+    50%,
+    70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+    60% {
+    transform: translateX(4px);
+  }
+}
+
+.invalid-word {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+}
+
+.ease-in{
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+}
+
+.modal{
+  border-radius:10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.modal-on{
+  background-color: rgb(0,0,0);
+  /* Fallback color */
+  background-color: rgba(0,0,0,0.4);
+  /* Black w/ opacity */
+}
+
+.height{
+  height: 90vh;
+}
+
+.height-max{
+  height: 110vh;
+  overflow: hidden;
+}
+
+.width{
+  width: 100vw;
+}
+
+.width-max{
+  width: 150vw;
+}
+
+#modal, #winModal{
+  -webkit-animation-name: slide-in;
+          animation-name: slide-in;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    transform: translateY(50%);
+  }
+
+  /* 50%{
+        transform: translateY(25%);
+    } */
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(50%);
+  }
+
+  /* 50%{
+        transform: translateY(25%);
+    } */
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-out{
+  -webkit-animation-name: slide-out;
+          animation-name: slide-out;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
 }
 
-.wrong{
-  background-color: rgb(58,58,60);
-  -webkit-animation-name: flip;
-          animation-name: flip;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+@-webkit-keyframes slide-out {
+  0% {
+    transform: translateY(0%);
+  }
+
+  /* 50%{
+        transform: translateY(25%);
+    } */
+
+  100%{
+    transform: translateY(50%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(0%);
+  }
+
+  /* 50%{
+        transform: translateY(25%);
+    } */
+
+  100%{
+    transform: translateY(50%);
+  }
+}
+
+@media only screen and (height: 720px) {
+  #kb-cont{
+    height:240px;
+    width: 300px;
+  }
+
+  #kb-cont > * > * {
+    height: 28px;
+    width: 30px;
+    font-size: 15px;
+    padding-top: 0px;
+  }
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .xs\:flex {
+    display: flex;
+  }
+
+  .xs\:h-14 {
+    height: 3.5rem;
+  }
+
+  .xs\:h-fit {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .xs\:w-auto {
+    width: auto;
+  }
+
+  .xs\:w-8 {
+    width: 2rem;
+  }
+
+  .xs\:w-12 {
+    width: 3rem;
+  }
+
+  .xs\:w-screen {
+    width: 100vw;
+  }
+
+  .xs\:gap-1 {
+    gap: 0.25rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .md\:h-hk {
+    height: 200px;
+  }
+
+  .md\:h-14 {
+    height: 3.5rem;
+  }
+
+  .md\:w-wk {
+    width: 484px;
+  }
+
+  .md\:w-11 {
+    width: 2.75rem;
+  }
+
+  .md\:w-18 {
+    width: 70px;
+  }
 }
