@@ -368,13 +368,10 @@ backspace.onclick = () =>{
              
       
    
-            if (x === 0){
                 buttons[x].splice(buttons[x].length-1,1);
-            } else {
                 buttons[n-1].splice(buttons[n-1].length-1,1);
-            }
-           
-  
+            
+    
 }
 checkWord = () => {
     checkFirstLetter();
@@ -554,7 +551,7 @@ fillWord(); // <--- testing if working
 
    resetGame = () => {
     //remove text from buttons
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 6; i++){
         for (let j = 0; j < 5;j++){
             rows[i].children[j].textContent = "";
             rows[i].children[j].classList.remove('correct');
