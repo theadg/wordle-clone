@@ -104,7 +104,20 @@
   
 } 
 
+.height{
+    height: 90vh;
+}
 
+.height-max{
+    height: 110vh;
+    overflow: hidden;
+}
+.width{
+    width: 100vw;
+}
+.width-max{
+    width: 150vw;
+}
 #modal, #winModal{
     animation-name: slide-in;
     animation-duration: 0.25s;
@@ -142,3 +155,18 @@
   }
   
 
+@media only screen and (height: 720px) {
+    #kb-cont{
+        height:240px;
+        width: 300px;
+    }
+
+    #kb-cont > * > * {
+        height: 28px;
+        width: 30px;
+        font-size: 15px;
+        padding-top: 0px;
+    }
+
+
+}
