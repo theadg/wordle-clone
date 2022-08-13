@@ -155,18 +155,3 @@
   }
   
 
-@media only screen and (height: 720px) {
-    #kb-cont{
-        height:240px;
-        width: 300px;
-    }
-
-    #kb-cont > * > * {
-        height: 28px;
-        width: 30px;
-        font-size: 15px;
-        padding-top: 0px;
-    }
-
-
-}
