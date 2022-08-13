@@ -57,6 +57,7 @@
         transform: scaleY(1);
     }
 }
+
 @keyframes shake {
     10%,
     90% {
@@ -85,3 +86,59 @@
     transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
     transition-duration: 300ms;
 }
+
+.modal{
+    border-radius:10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+ .modal-on{
+    background-color: rgb(0,0,0); /* Fallback color */
+     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+} 
+
+
+#modal, #winModal{
+    animation-name: slide-in;
+    animation-duration: 0.25s;
+  
+}
+
+@keyframes slide-in {
+    0% {
+      transform: translateY(50%);
+    }
+    /* 50%{
+        transform: translateY(25%);
+    } */
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .slide-out{
+    animation-name: slide-out;
+    animation-duration: 0.5s;
+  }
+  
+  @keyframes slide-out {
+    0% {
+      transform: translateY(0%);
+    }
+    /* 50%{
+        transform: translateY(25%);
+    } */
+    
+     100%{ transform: translateY(50%);
+    }
+  }
+  
+
