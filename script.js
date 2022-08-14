@@ -110,6 +110,7 @@ enter.onclick = () => {
 checkAnswer = () => {
 
     if (userAns === answer && n <=6){
+        fillWord();
     // SHOW WINNER MODAL
     setTimeout(function (){
     // show winner modal here, not the INFO modal
@@ -123,6 +124,7 @@ checkAnswer = () => {
 }
 
 checkRow = () => {
+    fillWordLose(); 
     //show you lost modal
      if (n === 6){
         setTimeout(function (){
@@ -130,6 +132,7 @@ checkRow = () => {
         loseModal.classList.remove('hidden');
         }, 1500);
         
+       
     }
 }
 removeOutline = () =>{
@@ -484,19 +487,11 @@ document.onkeydown = (e) =>{
         rows[n].children[word.length].textContent = "";
         rows[n].children[word.length].classList.remove('white');
 
-        // if (x ===  0){
+        
             typedButtons[x].splice(typedButtons[x].length-1);
-        // } else {
-        //     typedButtons[x-1].splice(typedButtons[x-1].length-1);
-        // }
-         
-  
-
-        // if (x === 0){
+       
             buttons[x].splice(buttons[x].length-1,1);
-        // } else {
-        //     buttons[n-1].splice(buttons[n-1].length-1,1);
-        // }
+    
     }
 
    
@@ -511,6 +506,7 @@ function isLetter(str) {
 const wordModal = document.querySelector('#word');
 
 fillWord = () =>{
+    answerArr = Array.from(answer);
     for (i = 0; i < answerArr.length; i++){
         wordModal.children[i].textContent = answerArr[i].toUpperCase();
     }
@@ -599,7 +595,7 @@ playCancelLose.onclick = () => {
     modalBG.classList.add('hidden');
     loseModal.classList.add('hidden');
 
-    document.onkeydown = () => {
+    document.onkeydown = () => { 
 
     }
 
@@ -625,9 +621,10 @@ playAgainLose.onclick = () => {
 const wordLose = document.querySelector('#wordLose');
  
 fillWordLose = () =>{
+    answerArr = Array.from(answer);
     for (i = 0; i < answerArr.length; i++){
         wordLose.children[i].textContent = answerArr[i].toUpperCase();
     }
+
   }
 
-fillWordLose(); 
